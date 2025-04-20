@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fauzil Adhim</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <button class="theme-toggle" id="themeToggle">🌓</button>
+    <button class="nav-toggle" id="navToggle">☰</button>
+
+    <nav id="mainNav">
+      <div class="nav-logo">Adhim</div>
+      <ul class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="overlay" id="overlay"></div>
+
+    <header id="home" class="home">
+      <div class="container">
+        <div class="hero">
+          <div class="hero-content">
+            <h1>Hello There</h1>
+            <h2>I am Fauzil Adhim</h2>
+            <p>Specialized in Graphic Design, UI/UX, Social Media Content</p>
+          </div>
+          <div class="hero-image">
+            <img src="/images/profile/umm.png" alt="Profile Image" />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="services">
+      <div class="container">
+        <h2 class="section-title">Services I Can Provide</h2>
+        <div class="services-grid">
+          <div class="card">
+            <h3>Web Design</h3>
+            <ul>
+              <li>UI/UX Design</li>
+              <li>Graphic Design</li>
+              <li>Social Media</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>UI/UX Design</h3>
+            <ul>
+              <li>User Research</li>
+              <li>Wireframing</li>
+              <li>Prototyping</li>
+              <li>User Testing</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Branding</h3>
+            <ul>
+              <li>Logo Design</li>
+              <li>Brand Identity</li>
+              <li>Marketing Materials</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="certificate">
+      <div class="container">
+        <h2 class="section-title">All Certificates I have</h2>
+        <div class="services-grid">
+              <!-- Visible certificates -->
+          <div class="card">
+            <div class="sertificate-card">
+              <img src="/images/sertificate/sertifikat.png" alt="" loading="lazy" />
+            </div>
+          </div>
+          <div class="card">
+            <div class="sertificate-card">
+              <img src="/images/sertificate/sertifikat.png" alt="" loading="lazy" />
+            </div>
+          </div>
+          <div class="card">
+            <div class="sertificate-card">
+              <img src="/images/sertificate/sertifikat.png" alt="" loading="lazy" />
+            </div>
+          </div>
+          <!-- Hidden certificates -->
+          <div class="card hidden-certificate">
+            <div class="sertificate-card">
+              <img src="/images/sertificate/sertifikat.png" alt="" />
+            </div>
+          </div>
+          <div class="card hidden-certificate">
+            <div class="sertificate-card">
+              <img src="/images/sertificate/sertifikat.png" alt="" />
+            </div>
+          </div>
+          <div class="card hidden-certificate">
+            <div class="sertificate-card">
+              <img src="/images/sertificate/sertifikat.png" alt="" />
+            </div>
+          </div>
+          <div class="card hidden-certificate">
+            <div class="sertificate-card">
+              <img src="/images/sertificate/sertifikat.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="button_sertificate">
+          <a href="#" id="toggleBtn" class="cta-button">More</a>
+        </div>
+      </div>
+
+      <div class="certificate-popup-overlay" id="popupOverlay">
+        <div class="certificate-popup-container">
+          <button class="close-popup" aria-label="Close popup">&times;</button>
+          <h3>All Certificates</h3>
+          <div class="certificate-popup-grid" id="popupContent">
+            <!-- Content will be injected here by JavaScript -->
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">Projects I Have Made</h2>
+        <div class="projects-grid">
+          <div class="card">
+            <h3>COFFEE STORE APP UI</h3>
+            <p>A modern mobile application interface for coffee shops with ordering system.</p>
+          </div>
+          <div class="card">
+            <h3>File Boots Showcase</h3>
+            <p>An innovative file management system with intuitive user interface.</p>
+          </div>
+          <div class="card">
+            <h3>Furniture Store App UI</h3>
+            <p>E-commerce application design for furniture shopping experience.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <p>Saya adalah seorang mahasiswa Program Studi Informatika di Universitas Muhammadiyah Malang (UMM), yang bersemangat dalam mempelajari teknologi terkini dan berkontribusi pada perkembangan dunia digital.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container">
+        <h2>Let's Work Together</h2>
+        <p>Here we and will see this year</p>
+        <a href="https://wa.me/" class="cta-button">Get in touch</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-links">
+          <a href="https://www.facebook.com/" target="_blank">
+            <img src="/images/social_logo/facebook.png" alt="facebook" />
+          </a>
+          <a href="https://www.instagram.com/adhim_khap" target="_blank">
+            <img src="/images/social_logo/instagram.png" alt="instagram" />
+          </a>
+          <a href="https://www.linkedin.com/in/fauzil-adhim07" target="_blank">
+            <img src="/images/social_logo/linkedin.png" alt="linkedin" />
+          </a>
+          <a href="https://www.github.com/" target="_blank">
+            <img src="/images/social_logo/github.png" alt="github" />
+          </a>
+          <a href="https://www.twitter.com/" target="_blank">
+            <img src="/images/social_logo/twitter.png" alt="twitter" />
+          </a>
+        </div>
+        <p>&copy; 2023 Fauzil Adhim. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+  </body>
+</html>
