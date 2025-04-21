@@ -118,3 +118,30 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
+//function typewriter effect
+  const text = "Hello There";
+  const el = document.getElementById("typewriter");
+  let i = 0;
+  let isDeleting = false;
+
+  function typeLoop() {
+    if (isDeleting) {
+      el.textContent = text.substring(0, i--);
+    } else {
+      el.textContent = text.substring(0, i++);
+    }
+
+    if (i > text.length) {
+      isDeleting = true;
+      setTimeout(typeLoop, 1000); // delay sebelum hapus
+    } else if (i < 0) {
+      isDeleting = false;
+      setTimeout(typeLoop, 500); // delay sebelum ngetik ulang
+    } else {
+      setTimeout(typeLoop, 150); // kecepatan ketik/hapus
+    }
+  }
+
+  typeLoop();
+

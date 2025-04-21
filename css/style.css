@@ -59,6 +59,10 @@ body {
     max-width: 600px;
 }
 
+.typewriter {
+    min-height: 4rem;
+}
+
 .hero-image {
     flex: 1;
     text-align: center;
@@ -385,7 +389,7 @@ nav {
 }
 
 .nav-logo {
-    margin-left: 50px;
+    margin-left: 100px;
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--primary-color);
