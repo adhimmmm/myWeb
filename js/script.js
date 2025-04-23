@@ -145,3 +145,55 @@ document.addEventListener("DOMContentLoaded", function () {
 
   typeLoop();
 
+
+
+  // Scroll Animation Functionality
+// Scroll Animation Functionality
+function initScrollAnimation() {
+  const scrollElements = document.querySelectorAll('[data-scroll]');
+  
+  // Reset semua animasi terlebih dahulu
+  scrollElements.forEach(el => {
+    el.classList.remove('animated');
+  });
+
+  const elementInView = (el) => {
+    const elementTop = el.getBoundingClientRect().top;
+    return elementTop <= window.innerHeight * 0.75;
+  };
+  
+  const displayScrollElement = (element) => {
+    element.classList.add('animated');
+  };
+  
+  const handleScrollAnimation = () => {
+    scrollElements.forEach((el) => {
+      if (elementInView(el)) {
+        displayScrollElement(el);
+      }
+    });
+  };
+
+  // Handle page show event (for back/forward navigation)
+  window.addEventListener('pageshow', function(event) {
+    // Jika halaman dimuat dari cache (bfcache)
+    if (event.persisted) {
+      // Reset dan jalankan kembali animasi
+      scrollElements.forEach(el => {
+        el.classList.remove('animated');
+      });
+      setTimeout(handleScrollAnimation, 50); // Beri sedikit delay
+    }
+  });
+
+  // Initialize
+  window.addEventListener('DOMContentLoaded', handleScrollAnimation);
+  window.addEventListener('load', handleScrollAnimation); // Tambah event load
+  window.addEventListener('scroll', handleScrollAnimation);
+  
+  // Jalankan sekali saat inisialisasi
+  handleScrollAnimation();
+}
+
+// Panggil fungsi init
+initScrollAnimation();
