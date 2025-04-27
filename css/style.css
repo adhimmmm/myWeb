@@ -4,7 +4,7 @@
     --text-color: #333;
     --bg-color: #f9f9f9;
     --card-bg: #fff;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow: 0 4px 6px rgba(54, 53, 53, 0.1);
     --transition: all 0.3s ease;
 }
 
@@ -14,7 +14,7 @@
     --text-color: #f9f9f9;
     --bg-color: #121212;
     --card-bg: #1e1e1e;
-    background-image: url(/images/background/black_background.jpg);
+    background-image: url();
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
@@ -27,7 +27,7 @@
 
 body {
     background-color: var(--bg-color);
-    background-image: url('/images/background/white_background.jpg');
+    background-image: url('');
     background-size: cover;
     color: var(--text-color);
     transition: var(--transition);
@@ -48,15 +48,19 @@ body {
     align-items: center;
     justify-content: center;
     gap: 40px;
-
 }
+
+.home {
+    height: 500px;
+}
+
 
 .hero-content {
     flex: 1;
     margin-left: 30px;
     text-align: left;
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
 }
 
 
@@ -67,10 +71,11 @@ body {
 
 .hero-skill {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     flex-wrap: wrap;
     gap: 20px;
     margin-bottom: 20px;
+    max-width: 500px;
 }
 
 .hero-skill img {
@@ -90,6 +95,36 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+.skill-item {
+    position: relative;
+    display: inline-block;
+}
+
+.skill-item:hover .skill-icon {
+    transform: scale(1.1);
+}
+
+.skill-tooltip {
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background-color: black;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.skill-item:hover .skill-tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
 .hero-image {
     flex: 1;
     text-align: center;
@@ -107,8 +142,23 @@ body {
     width: 100%;
     height: auto;
     border-radius: 30px;
-    box-shadow: var(--shadow);
     transition: var(--transition);
+}
+
+.image-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+.hero-image img:hover .image-tooltip {
+    opacity: 1;
 }
 
 .hero h1 {
@@ -153,6 +203,15 @@ section {
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     margin: 10px auto;
     border-radius: 2px;
+}
+
+.section-subtitle {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: center;
 }
 
 /* Scroll Animation Style */
@@ -202,6 +261,7 @@ section {
 }
 
 
+
 .card {
     background-color: var(--card-bg);
     border-radius: 10px;
@@ -211,12 +271,51 @@ section {
 }
 
 
+
+.service-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+.service-icon {
+    width: 60px;
+    height: auto;
+    margin-bottom: 15px;
+    
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .service-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+
+
 .sertificate-card img {
     width: 100%;
     height: auto;
     object-fit: cover;
     border-radius: 8px 8px 0 0;
 }
+
 
 .certificate-hidden {
     max-height: 0;
@@ -377,6 +476,7 @@ footer {
     background-color: var(--card-bg);
     padding: 40px 0;
     text-align: center;
+    border-style: solid var(--primary-color);
 }
 
 .footer-links {
@@ -455,7 +555,7 @@ nav {
 }
 
 .nav-logo {
-    margin-left: 100px;
+    margin-left: 50px;
     font-size: 2rem;
     font-weight: bold;
     color: var(--primary-color);
@@ -581,7 +681,12 @@ nav {
          .hero-content {
              text-align: center;
              margin-right: 30px;
+             margin-bottom: 60px;
              order: 2;
+         }
+
+         .hero-skill {
+            max-width: fit-content;;
          }
     
          .hero-image {
@@ -589,6 +694,13 @@ nav {
              text-align: center;
              margin-bottom: 1px;
          }
+                 .hero-image img {
+                     max-width: 80%;
+                     width: 100%;
+                     height: auto;
+                     border-radius: 30px;
+                     transition: var(--transition);
+                 }
     
          .hero p {
              margin-left: auto;
@@ -600,7 +712,7 @@ nav {
          }
     
          .hero h2 {
-             font-size: 1rem;
+             font-size: 1.5rem;
          }
     
          .section-title {
@@ -612,6 +724,16 @@ nav {
          .social-links {
              grid-template-columns: 1fr;
          }
+
+         .container {
+            margin-top: 0;
+         }
+
+         .home {
+                height: auto;
+         }
+
+
 }
 
 .overlay {
@@ -635,8 +757,3 @@ nav {
 
 
 
-
-
-@media (max-width: 768px) {
-   
-}
